@@ -11,3 +11,6 @@ if grep -q '^XKBVARIANT=' "$conf"; then
   variant=$(grep '^XKBVARIANT=' "$conf" | cut -d= -f2 | tr -d '"')
   sed -i "/^[[:space:]]*kb_options *=/i\  kb_variant = $variant" "$hyprconf"
 fi
+# temp test missing /etc/vconsole.conf breaking install
+rm -rf /etc/vconsole.conf
+echo "KEYMAP=us" > /etc/vconsole.conf 
