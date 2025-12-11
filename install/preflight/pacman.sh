@@ -1,3 +1,5 @@
+rm -f /etc/vconsole.conf
+echo "KEYMAP=us" > /etc/vconsole.conf
 if [[ -n ${OMARCHY_ONLINE_INSTALL:-} ]]; then
   # Install build tools
   sudo pacman -S --needed --noconfirm base-devel
